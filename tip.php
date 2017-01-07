@@ -12,10 +12,12 @@
             <br>
             <br>
             <?php
+				$box_checked = false;
                 for ($x = 10; $x <= 20; $x+=5) {
 				    // the 15% button is checked by default
-                    if ($x == 15) {
+                    if ($x == $_POST["percent"] || $x == 20 && !$box_checked) {
                         echo("<input type='radio' name='percent' value=$x checked='checked'>$x%\t");
+						$box_checked = true;
                     }
                     else {
                         echo("<input type='radio' name='percent' value=$x>$x%\t");
